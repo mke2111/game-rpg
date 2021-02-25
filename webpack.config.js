@@ -16,33 +16,15 @@ module.exports = {
 
       {
         test: [/\.vert$/, /\.frag$/],
-        use: [
-          'style-loader',
-          'css-loader',
-          'resolve-url-loader',
-          'postcss-loader',
-          'sass-loader',
-          'raw-loader',
-        ],
-      },
-      {
-
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-
-        type: 'asset/resource',
-
-      },
-
-    ],
-
+        use: 'raw-loader'
+      }
+    ]
   },
+
   plugins: [
     new webpack.DefinePlugin({
       CANVAS_RENDERER: JSON.stringify(true),
       WEBGL_RENDERER: JSON.stringify(true),
     }),
-  ],
-  devServer: {
-    port: 8080,
-  },
+  ]
 };
