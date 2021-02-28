@@ -5,10 +5,10 @@ export default class CreditsScene extends Phaser.Scene {
   constructor () {
     super('Credits');
   }
- 
+
   create () {
     this.creditsText = this.add.text(0, 0, 'Credits', { fontSize: '32px', fill: '#fff' });
-    this.madeByText = this.add.text(0, 0, 'Created By: Roy Mukuye', { fontSize: '26px', fill: '#fff' });
+    this.madeByText = this.add.text(0, 0, 'Created By: Roy Mukuye \n \n Github: @mke2111 \n \n Twitter: @Roymkenya \n \n LinkedIn: Roy Mukuye', { fontSize: '26px', fill: '#fff' });
     this.infoByText = this.add.text(0, 0, 'This RPG game is created using Phaser-3', { fontSize: '22px', fill: '#f00'});
     this.zone = this.add.zone(config.width/2, config.height/2, config.width, config.height);
     
