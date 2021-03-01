@@ -32,5 +32,10 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "phaser-matter-collision-plugin": "^0.10.2",
+    "regenerator-runtime": "^0.13.7"
   }
 }
