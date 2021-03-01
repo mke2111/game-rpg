@@ -2,7 +2,7 @@ import { retrieveData } from '../ScoreApi';
 
 export default class ScoreScene extends Phaser.Scene {
   constructor() {
-    super('ScoreScene');
+    super('Score');
   }
 
   init(data) {

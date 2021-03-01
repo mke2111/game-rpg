@@ -1,4 +1,10 @@
 import 'phaser';
+import Player from '../Player';
+import Enemy from '../Enemy';
+import gameMap from '../../assets/character/map.json';
+import rpgImage from '../../assets/character/RPG Nature Tileset.png';
+import Resource from '../Resource';
+import { sendData } from '../ScoreApi';
 
 export default class GameScene extends Phaser.Scene {
   constructor () {
@@ -43,7 +49,7 @@ export default class GameScene extends Phaser.Scene {
     if (this.player.dead || this.enemies.every(enemy => enemy.dead)) {
       const postScore = this.player.totalScore || '0';
       sendData(this.playerName, postScore);
-      this.scene.start('LeaderboardScene', { score: this.player.totalScore ? this.player.totalScore : 0, player: this.playerName });
+      this.scene.start('ScoreScene', { score: this.player.totalScore ? this.player.totalScore : 0, player: this.playerName });
     }
   }
 

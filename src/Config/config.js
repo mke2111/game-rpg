@@ -1,4 +1,6 @@
 import 'phaser';
+// import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
+
 
 export default {
   type: Phaser.AUTO,
