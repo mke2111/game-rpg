@@ -10,9 +10,6 @@ export default class ScoreScene extends Phaser.Scene {
     this.thePlayer = data.player;
   }
 
-  preload() {
-  }
-
   create() {
     this.add.text(40, 20, `Game over, ${this.thePlayer}. Your score: ${this.finalScore}. Refresh page to play again.`);
     this.add.text(100, 60, 'Top scores', { color: '#fff', fontSize: '20px' });

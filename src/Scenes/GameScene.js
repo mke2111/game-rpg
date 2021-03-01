@@ -1,4 +1,4 @@
-import 'phaser';
+// import 'phaser';
 import Player from '../Player';
 import Enemy from '../Enemy';
 import gameMap from '../../assets/character/map.json';
@@ -9,6 +9,11 @@ import { sendData } from '../ScoreApi';
 export default class GameScene extends Phaser.Scene {
   constructor () {
     super('Game');
+    this.enemies = [];
+  }
+
+  init(data) {
+    this.playerName = data.player;
   }
 
   preload () {

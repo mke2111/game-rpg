@@ -1,5 +1,5 @@
 import 'phaser';
-// import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
+import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
 
 
 export default {
@@ -15,13 +15,13 @@ export default {
       gravity: { y: 0 },
     },
   },
-  // plugins: {
-  //   scene: [
-  //     {
-  //       plugin: PhaserMatterCollisionPlugin,
-  //       key: 'matterCollision',
-  //       mapping: 'matterCollision',
-  //     },
-  //   ],
-  // },
+  plugins: {
+    scene: [
+      {
+        plugin: PhaserMatterCollisionPlugin,
+        key: 'matterCollision',
+        mapping: 'matterCollision',
+      },
+    ],
+  },
 };
