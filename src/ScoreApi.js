@@ -2,7 +2,7 @@ import 'regenerator-runtime';
 
 const fetch = require('node-fetch');
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/4gmHINI4aWAKRee5MMme/scores/';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Zl4e7IVkemOTTVg2fUez/scores/';
 
 export const sendData = async (name, score) => {
   const playerScore = {
