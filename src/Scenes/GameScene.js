@@ -3,6 +3,7 @@ import Player from '../Player';
 import Enemy from '../Enemy';
 import gameMap from '../../assets/character/map.json';
 import rpgImage from '../../assets/character/RPG Nature Tileset.png';
+import tileImage from '../../assets/images/tiles.png';
 import Resource from '../Resource';
 import { sendData } from '../ScoreApi';
 
@@ -21,23 +22,29 @@ export default class GameScene extends Phaser.Scene {
     Player.preload(this);
     Enemy.preload(this);
     Resource.preload(this);
-    this.load.image('tiles', rpgImage);
+    this.load.image('tiles', tileImage);
     this.load.tilemapTiledJSON('map', gameMap);
   }
 
   create () {
+    this.add.image(380, 300, 'background');
+
     const map = this.make.tilemap({ key: 'map' });
     this.map = map;
-    const tileset = map.addTilesetImage('RPG Nature Tileset', 'tiles', 32, 32, 0, 0);
-    const layer1 = map.createStaticLayer('Tile Layer 1', tileset, 0, 0);
-    const layer2 = map.createStaticLayer('Tile Layer 2', tileset, 0, 0);
-    layer1.setCollisionByProperty({ collides: true });
-    this.matter.world.convertTilemapLayer(layer1);
+    // const tileset = map.addTilesetImage('tiles', 'tiles', 20, 0, 0);
+    // const layer1 = map.createStaticLayer('Tile Layer 1', tileset, 0, 0);
+    // const layer2 = map.createStaticLayer('Tile Layer 2', tileset, 0, 0);
+
+
+    // layer1.setCollisionByProperty({ collides: true });
+    // layer2.setCollisionByProperty({ collides: true });
+    // this.matter.world.convertTilemapLayer(layer1);
+    // this.matter.world.convertTilemapLayer(layer2);
     this.map.getObjectLayer('Resources').objects.forEach(resource => new Resource({ scene: this, resource }));
     this.map.getObjectLayer('Enemies').objects.forEach(enemy => this.enemies.push(new Enemy({ scene: this, enemy })));
 
     this.player = new Player({
-      scene: this, x: 100, y: 100, texture: 'female', frame: 'townsfolk_f_idle_1',
+      scene: this, x: 100, y: 100, texture: 'female', frame: 'townsfolk_f_idle_2',
     });
 
     this.scoreText = this.add.text(250, 10, '', { fontSize: '22px', fill: '#000' });
@@ -58,9 +65,15 @@ export default class GameScene extends Phaser.Scene {
     }
   }
 
+  generateEnemy() {
+    // this.map.getObjectLayer('Resources').objects.forEach(resource => new Resource({ scene: this, resource }));
+    this.map.getObjectLayer('Enemies').objects.forEach(enemy => this.enemies.push(new Enemy({ scene: this, enemy })));
+  }
+
   update() {
     this.enemies.forEach(enemy => enemy.update());
     this.player.update();
+    // this.generateEnemy();
     this.scoreText.setText(`Score: ${this.player.totalScore ? this.player.totalScore : 0}`);
     this.gameOver();
   }

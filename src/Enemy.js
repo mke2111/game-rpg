@@ -40,35 +40,74 @@ export default class Enemy extends MatterEntity {
     });
   }
 
-    attack = (target) => {
-      if (target.dead || this.dead) {
-        clearInterval(this.attackTimer);
-        return;
-      }
-      target.hit();
+  attack = (target) => {
+    if (target.dead || this.dead) {
+      clearInterval(this.attackTimer);
+      return;
     }
+    target.hit();
+  }
 
-    update() {
-      if (this.dead) return;
-      if (this.attacking) {
-        const direction = this.attacking.position.subtract(this.position);
-        if (direction.length() > 24) {
-          const v = direction.normalize();
-          this.setVelocityX(direction.x);
-          this.setVelocityY(direction.y);
-          if (this.attackTimer) {
-            clearInterval(this.attackTimer);
-            this.attackTimer = null;
-          }
-        } else if (this.attackTimer == null) {
-          this.attackTimer = setInterval(this.attack, 500, this.attacking);
+  update() {
+    if (this.dead) return;
+    if (this.attacking) {
+      const direction = this.attacking.position.subtract(this.position);
+      if (direction.length() > 24) {
+        const v = direction.normalize();
+        this.setVelocityX(direction.x);
+        this.setVelocityY(direction.y);
+        if (this.attackTimer) {
+          clearInterval(this.attackTimer);
+          this.attackTimer = null;
         }
-      }
-      this.setFlipX(this.velocity.x < 0);
-      if (Math.abs(this.velocity.x) > 0.1 || Math.abs(this.velocity.y) > 0.1) {
-        this.anims.play(`${this.name}_walk`, true);
-      } else {
-        this.anims.play(`${this.name}_idle`, true);
+      } else if (this.attackTimer == null) {
+        this.attackTimer = setInterval(this.attack, 500, this.attacking);
       }
     }
+    this.setFlipX(this.velocity.x < 0);
+    if (Math.abs(this.velocity.x) > 0.1 || Math.abs(this.velocity.y) > 0.1) {
+      this.anims.play(`${this.name}_walk`, true);
+    } else {
+      this.anims.play(`${this.name}_idle`, true);
+    }
+  }
+
+  generateEnemies(amount) {
+
+    this.enemies = this.game.add.group();
+
+    // Enable physics in them
+    this.enemies.enableBody = true;
+    this.enemies.physicsBodyType = Phaser.Physics.ARCADE;
+
+    for (var i = 0; i < amount; i++) {
+        this.generateEnemy();
+    }
+  }
+
+  generateEnemy() {
+
+      enemy = this.enemies.create(this.game.world.randomX, this.game.world.randomY, 'characters');
+
+      do {
+          enemy.reset(this.game.world.randomX, this.game.world.randomY);
+      } while (Phaser.Math.distance(this.player.x, this.player.y, enemy.x, enemy.y) <= 400)
+
+      var rnd = Math.random();
+      if (rnd >= 0 && rnd < .3) enemy = this.generateSkeleton(enemy);
+
+      // console.log('Generated ' + enemy.name + ' with ' + enemy.health + ' health, ' + enemy.strength + ' strength, and ' + enemy.speed + ' speed.');
+
+      return enemy;
+  }
+
+  generateSkeleton(enemy) {
+
+      enemy.animations.add('down', [9, 10, 11], 10, true);
+      enemy.animations.add('left', [21, 22, 23], 10, true);
+      enemy.animations.add('right', [33, 34, 35], 10, true);
+      enemy.animations.add('up', [45, 46, 47], 10, true);
+
+      // return this.setStats(enemy, 'Skeleton', 100, 70, 20, 5, 6);
+  }
 }

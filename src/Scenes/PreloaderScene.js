@@ -22,7 +22,7 @@ export default class PreloaderScene extends Phaser.Scene {
     var width = this.cameras.main.width;
     var height = this.cameras.main.height;
     var loadingText = this.make.text({
-      x: width / 2,
+      x: (width / 2) + 100,
       y: height / 2 - 50,
       text: 'RPG Game Loading...',
       style: {
@@ -33,7 +33,7 @@ export default class PreloaderScene extends Phaser.Scene {
     loadingText.setOrigin(0.5, 0.5);
   
     var percentText = this.make.text({
-      x: width / 2,
+      x: (width / 2) + 100,
       y: height / 2 - 5,
       text: '0%',
       style: {
@@ -44,7 +44,7 @@ export default class PreloaderScene extends Phaser.Scene {
     percentText.setOrigin(0.5, 0.5);
   
     var assetText = this.make.text({
-      x: width / 2,
+      x: (width / 2) + 600,
       y: height / 2 + 50,
       text: '',
       style: {
@@ -52,7 +52,7 @@ export default class PreloaderScene extends Phaser.Scene {
         fill: '#ffffff'
       }
     });
-    assetText.setOrigin(0.5, 0.5);
+    assetText.setOrigin(0.5, 0.1);
   
     // update progress bar
     this.load.on('progress', function (value) {
@@ -86,6 +86,10 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
     this.load.audio('bgMusic', ['assets/TownTheme.mp3']);
+    this.load.spritesheet('tiles', 'assets/images/tiles.png', 16, 16);
+    this.load.spritesheet('characters', 'assets/images/characters.png', 16, 16);
+    this.load.image('background', '../assets/bg.jpg');
+
   }
    
   ready () {

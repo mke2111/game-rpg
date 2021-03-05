@@ -15,9 +15,9 @@ export default class Player extends MatterEntity {
     });
     this.touching = [];
     this.totalScore;
-    this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene, 0, 0, 'items', 162);
+    this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene, 0, 0, 'items', 90);
     this.spriteWeapon.setScale(0.8);
-    this.spriteWeapon.setOrigin(0.25, 0.75);
+    this.spriteWeapon.setOrigin(0, 0.75);
     this.scene.add.existing(this.spriteWeapon);
 
     const { Body, Bodies } = Phaser.Physics.Matter.Matter;
@@ -44,7 +44,7 @@ export default class Player extends MatterEntity {
   weaponRotate() {
     const pointer = this.scene.input.activePointer;
     if (pointer.isDown) {
-      this.weaponRotation += 6;
+      this.weaponRotation += 10;
     } else {
       this.weaponRotation = 0;
     }

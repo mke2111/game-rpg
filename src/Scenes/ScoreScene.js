@@ -11,8 +11,8 @@ export default class ScoreScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.text(40, 20, `Game over, ${this.thePlayer}. Your score: ${this.finalScore}. Refresh page to play again.`);
-    this.add.text(100, 60, 'Top scores', { color: '#fff', fontSize: '20px' });
+    this.add.text(150, 20, `Game over, ${this.thePlayer}. \n Score: ${this.finalScore}. \n \n Refresh page to play again.`);
+    this.add.text(200, 100, 'Top scores', { color: '#f00', fontSize: '20px' });
     retrieveData().then((data) => {
       const dataStyle = {
         color: '#000',
