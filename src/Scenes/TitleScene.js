@@ -8,7 +8,7 @@ export default class TitleScene extends Phaser.Scene {
   }
  
   create () {
-    this.intro = this.add.text(200, 40, 'Enter your name: ', { fontSize: 20, fontFamily: 'monospace' });
+    this.intro = this.add.text(170, 10, 'Enter your name: ', { fontSize: 20, fontFamily: 'monospace' });
     const input = this.add.dom(300, 60, 'input', {
       type: 'text',
       name: 'nameField',

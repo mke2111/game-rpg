@@ -11,7 +11,8 @@ export default class PreloaderScene extends Phaser.Scene {
  
   preload () {
     // add logo image
-    this.add.image(400, 200, 'logo');
+    this.add.image(250, 50, 'logo');
+    this.add.image(280, 250, 'preloaderBar');
   
     // display progress bar
     var progressBar = this.add.graphics();
@@ -22,7 +23,7 @@ export default class PreloaderScene extends Phaser.Scene {
     var width = this.cameras.main.width;
     var height = this.cameras.main.height;
     var loadingText = this.make.text({
-      x: (width / 2) + 100,
+      x: (width / 2),
       y: height / 2 - 50,
       text: 'RPG Game Loading...',
       style: {
@@ -33,7 +34,7 @@ export default class PreloaderScene extends Phaser.Scene {
     loadingText.setOrigin(0.5, 0.5);
   
     var percentText = this.make.text({
-      x: (width / 2) + 100,
+      x: (width / 2),
       y: height / 2 - 5,
       text: '0%',
       style: {
@@ -44,7 +45,7 @@ export default class PreloaderScene extends Phaser.Scene {
     percentText.setOrigin(0.5, 0.5);
   
     var assetText = this.make.text({
-      x: (width / 2) + 600,
+      x: (width / 2),
       y: height / 2 + 50,
       text: '',
       style: {
