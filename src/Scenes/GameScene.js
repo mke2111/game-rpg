@@ -29,23 +29,29 @@ export default class GameScene extends Phaser.Scene {
   create () {
     this.add.image(380, 300, 'background');
 
+
     const map = this.make.tilemap({ key: 'map' });
     this.map = map;
-    // const tileset = map.addTilesetImage('tiles', 'tiles', 20, 0, 0);
-    // const layer1 = map.createStaticLayer('Tile Layer 1', tileset, 0, 0);
-    // const layer2 = map.createStaticLayer('Tile Layer 2', tileset, 0, 0);
+    const tileset = map.addTilesetImage('tiles', 'tiles', 20, 0, 0);
+    const layer1 = map.createStaticLayer('Tile Layer 1', tileset, 0, 0);
+    const layer2 = map.createStaticLayer('Tile Layer 2', tileset, 0, 0);
 
+    // don't go out of the map
+    layer1.setCollisionByProperty({ collides: true });
+    this.matter.world.convertTilemapLayer(layer1);
 
-    // layer1.setCollisionByProperty({ collides: true });
-    // layer2.setCollisionByProperty({ collides: true });
-    // this.matter.world.convertTilemapLayer(layer1);
-    // this.matter.world.convertTilemapLayer(layer2);
     this.map.getObjectLayer('Resources').objects.forEach(resource => new Resource({ scene: this, resource }));
     this.map.getObjectLayer('Enemies').objects.forEach(enemy => this.enemies.push(new Enemy({ scene: this, enemy })));
 
     this.player = new Player({
       scene: this, x: 100, y: 100, texture: 'female', frame: 'townsfolk_f_idle_2',
     });
+
+    // limit camera to map
+    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+    this.cameras.main.startFollow(this.player);
+    this.cameras.main.roundPixels = true; // avoid tile bleed
+
 
     this.scoreText = this.add.text(250, 10, '', { fontSize: '22px', fill: '#000' });
 
