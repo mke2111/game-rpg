@@ -4,7 +4,7 @@ import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
 
 export default {
   type: Phaser.AUTO,
-  parent: 'content',
+  parent: 'phaser-example',
   width: 524,
   height: 265,
   backgroundColor: '#000035',
