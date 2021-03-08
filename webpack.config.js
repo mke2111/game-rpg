@@ -32,18 +32,18 @@ module.exports = {
       //     },
       //   },
       // },
-      {
-        test: /\.(png|jpe?g|gif|wav|mp3)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[contenthash].[ext]',
-              outputPath: 'images',
-            },
-          },
-        ],
-      },
+      // {
+      //   test: /\.(png|jpe?g|gif|wav|mp3)$/i,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: '[name].[contenthash].[ext]',
+      //         outputPath: 'images',
+      //       },
+      //     },
+      //   ],
+      // },
     ]
   },
 
