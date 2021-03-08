@@ -29,6 +29,7 @@
     "terser-webpack-plugin": "^2.2.1"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "phaser": "^3.50.0",
     "phaser-matter-collision-plugin": "^0.10.2",
