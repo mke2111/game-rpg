@@ -7,11 +7,11 @@ export default {
   parent: 'content',
   // width: 524,
   // height: 265,
-  width: 550,
-  height: 270,
+  width: 380,
+  height: 300,
   backgroundColor: '#000035',
   scale: {
-    zoom: 1.6,
+    // zoom: 1.5,
   },
   physics: {
     default: 'matter',

@@ -23,8 +23,8 @@ export default class ScoreScene extends Phaser.Scene {
       const space = 20;
       for (let i = 0; i < 10; i += 1) {
         if (data[i] !== undefined) {
-          this.add.text(60, 80 + (space * i),
-            `${i + 1}. Name: ${data[i].user} -- Score: ${data[i].score}`,
+          this.add.text(60, 130 + (space * i),
+            `${data[i].user} --  ${data[i].score}`,
             dataStyle);
         }
       }

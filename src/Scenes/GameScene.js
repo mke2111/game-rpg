@@ -32,9 +32,8 @@ export default class GameScene extends Phaser.Scene {
 
     const map = this.make.tilemap({ key: 'map' });
     this.map = map;
-    const tileset = map.addTilesetImage('tiles', 'tiles', 32, 32, 0, 0);
-    const layer1 = map.createStaticLayer('Tile Layer 1', tileset, 0, 0);
-    const layer2 = map.createStaticLayer('Tile Layer 2', tileset, 0, 0);
+    const tileset = map.addTilesetImage('tiles', 'tiles', 0, 100);
+    const layer1 = map.createLayer('Tile Layer 1', tileset, 30, 60);
 
     // don't go out of the map
     layer1.setCollisionByProperty({ collides: true });
@@ -48,7 +47,7 @@ export default class GameScene extends Phaser.Scene {
     });
 
     // limit camera to map
-    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+    this.cameras.main.setBounds(0, 0, map.widthInPixels + 100, map.heightInPixels + 300);
     this.cameras.main.startFollow(this.player);
     this.cameras.main.roundPixels = true; // avoid tile bleed
 
