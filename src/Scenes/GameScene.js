@@ -2,7 +2,6 @@
 import Player from '../Player';
 import Enemy from '../Enemy';
 import gameMap from '../../assets/character/map.json';
-import rpgImage from '../../assets/character/RPG Nature Tileset.png';
 import tileImage from '../../assets/images/tiles.png';
 import Resource from '../Resource';
 import { sendData } from '../ScoreApi';
