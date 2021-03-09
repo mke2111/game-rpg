@@ -501,8 +501,8 @@
                  "type":"rock",
                  "visible":true,
                  "width":32,
-                 "x":444.80971659919,
-                 "y":124.825910931174
+                 "x":344.80971659919,
+                 "y":104.825910931174
                 }, 
                 {
                  "gid":23,
@@ -534,8 +534,8 @@
                  "type":"rock",
                  "visible":true,
                  "width":32,
-                 "x":92.8259109311741,
-                 "y":101.02024291498
+                 "x":192.8259109311741,
+                 "y":191.02024291498
                 }, 
                 {
                  "gid":22,
@@ -567,8 +567,8 @@
                  "type":"bush",
                  "visible":true,
                  "width":32,
-                 "x":489.02024291498,
-                 "y":254.056680161943
+                 "x":409.02024291498,
+                 "y":154.056680161943
                 }, 
                 {
                  "gid":23,
@@ -600,8 +600,8 @@
                  "type":"rock",
                  "visible":true,
                  "width":32,
-                 "x":137.036437246964,
-                 "y":231.951417004049
+                 "x":237.036437246964,
+                 "y":331.951417004049
                 }, 
                 {
                  "gid":21,
@@ -633,8 +633,8 @@
                  "type":"tree",
                  "visible":true,
                  "width":32,
-                 "x":358.089068825911,
-                 "y":165.635627530364
+                 "x":258.089068825911,
+                 "y":115.635627530364
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -647,6 +647,62 @@
          "id":4,
          "name":"Enemies",
          "objects":[
+              {
+                     "gid":3,
+                     "height":32,
+                     "id":30,
+                     "name":"bear",
+                     "properties":[
+                            {
+                             "name":"drops",
+                             "type":"string",
+                             "value":"[241, 280]"
+                            }, 
+                            {
+                             "name":"health",
+                             "type":"int",
+                             "value":9
+                            }, 
+                            {
+                             "name":"score",
+                             "type":"int",
+                             "value":20
+                            }],
+                     "rotation":0,
+                     "type":"bear",
+                     "visible":true,
+                 "width":52,
+                 "x":236.307692307692,
+                 "y":299.3198380566802
+                },
+                {
+                     "gid":3,
+                     "height":32,
+                     "id":22,
+                     "name":"bear",
+                     "properties":[
+                            {
+                             "name":"drops",
+                             "type":"string",
+                             "value":"[241, 280]"
+                            }, 
+                            {
+                             "name":"health",
+                             "type":"int",
+                             "value":9
+                            }, 
+                            {
+                             "name":"score",
+                             "type":"int",
+                             "value":20
+                            }],
+                     "rotation":0,
+                     "type":"bear",
+                     "visible":true,
+                     "width":32,
+                     "x":246.307692307692,
+                     "y":200.3198380566802
+                    }, 
                 {
                  "gid":3,
                  "height":32,
@@ -666,15 +722,43 @@
                         {
                          "name":"score",
                          "type":"int",
-                         "value":100
+                         "value":20
                         }],
                  "rotation":0,
                  "type":"bear",
                  "visible":true,
                  "width":32,
                  "x":436.307692307692,
-                 "y":99.3198380566802
-                }, 
+                 "y":199.3198380566802
+                },
+                {
+                     "gid":3,
+                     "height":32,
+                     "id":39,
+                     "name":"ent",
+                     "properties":[
+                            {
+                             "name":"drops",
+                             "type":"string",
+                             "value":"[201, 203]"
+                            }, 
+                            {
+                             "name":"health",
+                             "type":"int",
+                             "value":8
+                            }, 
+                            {
+                             "name":"score",
+                             "type":"int",
+                             "value":10
+                            }],
+                     "rotation":0,
+                     "type":"ent",
+                     "visible":true,
+                     "width":32,
+                     "x":198.412955465587,
+                     "y":47.255060728745
+                    }, 
                 {
                  "gid":3,
                  "height":32,
@@ -694,7 +778,7 @@
                         {
                          "name":"score",
                          "type":"int",
-                         "value":100
+                         "value":10
                         }],
                  "rotation":0,
                  "type":"ent",
@@ -702,7 +786,35 @@
                  "width":32,
                  "x":458.412955465587,
                  "y":247.255060728745
-                }, 
+                },
+                {
+                 "gid":5,
+                 "height":32,
+                 "id":31,
+                 "name":"wolf",
+                 "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[243]"
+                        }, 
+                        {
+                         "name":"health",
+                         "type":"int",
+                         "value":5
+                        }, 
+                        {
+                         "name":"score",
+                         "type":"int",
+                         "value":30
+                        }],
+                 "rotation":0,
+                 "type":"wolf",
+                 "visible":true,
+                 "width":32,
+                 "x":67.562753036437,
+                 "y":230.534412955466
+                },
                 {
                  "gid":5,
                  "height":32,
@@ -722,14 +834,14 @@
                         {
                          "name":"score",
                          "type":"int",
-                         "value":100
+                         "value":30
                         }],
                  "rotation":0,
                  "type":"wolf",
                  "visible":true,
                  "width":32,
-                 "x":247.562753036437,
-                 "y":160.534412955466
+                 "x":167.562753036437,
+                 "y":230.534412955466
                 }],
          "opacity":1,
          "type":"objectgroup",
