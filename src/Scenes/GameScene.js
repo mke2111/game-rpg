@@ -32,7 +32,7 @@ export default class GameScene extends Phaser.Scene {
 
     const map = this.make.tilemap({ key: 'map' });
     this.map = map;
-    const tileset = map.addTilesetImage('tiles', 'tiles', 20, 0, 0);
+    const tileset = map.addTilesetImage('tiles', 'tiles', 32, 32, 0, 0);
     const layer1 = map.createStaticLayer('Tile Layer 1', tileset, 0, 0);
     const layer2 = map.createStaticLayer('Tile Layer 2', tileset, 0, 0);
 

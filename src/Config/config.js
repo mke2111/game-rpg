@@ -5,11 +5,13 @@ import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
 export default {
   type: Phaser.AUTO,
   parent: 'content',
-  width: 524,
-  height: 265,
+  // width: 524,
+  // height: 265,
+  width: 550,
+  height: 270,
   backgroundColor: '#000035',
   scale: {
-    zoom: 1.7,
+    zoom: 1.6,
   },
   physics: {
     default: 'matter',

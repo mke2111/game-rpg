@@ -21,29 +21,21 @@ module.exports = {
         test: [/\.vert$/, /\.frag$/],
         use: 'raw-loader'
       },
-      // {
-      //   test: /\.m?js$/,
-      //   exclude: /(node_modules|bower_components)/,
-      //   use: {
-      //     loader: 'babel-loader',
-      //     options: {
-      //       presets: ['@babel/preset-env'],
-      //       plugins: ['@babel/plugin-proposal-class-properties'],
-      //     },
-      //   },
-      // },
-      // {
-      //   test: /\.(png|jpe?g|gif|wav|mp3)$/i,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: '[name].[contenthash].[ext]',
-      //         outputPath: 'images',
-      //       },
-      //     },
-      //   ],
-      // },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-proposal-class-properties'],
+          },
+        },
+      },
+      {
+        test: /\.(png|jpe?g|gif|wav|mp3)$/i,
+        loader: 'file-loader',
+      },
     ]
   },
 
@@ -58,3 +50,16 @@ module.exports = {
     port: 8080,
   },
 };
+
+// {
+//   test: /\.(png|jpe?g|gif|wav|mp3)$/i,
+//   use: [
+//     {
+//       loader: 'file-loader',
+//       options: {
+//         name: '[name].[contenthash].[ext]',
+//         outputPath: 'images',
+//       },
+//     },
+//   ],
+// },
