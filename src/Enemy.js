@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import Phaser from 'phaser';
 import MatterEntity from './MatterEntity';
 import enemyImg from '../assets/character/enemies.png';
@@ -54,7 +55,7 @@ export default class Enemy extends MatterEntity {
     if (this.attacking) {
       const direction = this.attacking.position.subtract(this.position);
       if (direction.length() > 24) {
-        // const v = direction.normalize();
+        const v = direction.normalize();
         this.setVelocityX(direction.x);
         this.setVelocityY(direction.y);
         if (this.attackTimer) {
