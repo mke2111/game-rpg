@@ -21,11 +21,19 @@
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
+    "babel-eslint": "10.1.x",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
+    "eslint": "6.8.x",
+    "eslint-config-airbnb-base": "14.1.x",
+    "eslint-plugin-import": "2.20.x",
     "file-loader": "^4.3.0",
     "html-webpack-plugin": "^3.2.0",
     "raw-loader": "^3.1.0",
+    "stylelint": "13.3.x",
+    "stylelint-config-standard": "20.0.x",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "3.17.x",
     "terser-webpack-plugin": "^2.2.1"
   },
   "dependencies": {

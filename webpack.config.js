@@ -1,4 +1,3 @@
-'use strict';
 
 const webpack = require('webpack');
 const path = require('path');
@@ -9,17 +8,17 @@ module.exports = {
 
   output: {
     filename: 'project.bundle.js',
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'build'),
     // publicPath: '/build/',
   },
-  
+
   module: {
 
     rules: [
 
       {
         test: [/\.vert$/, /\.frag$/],
-        use: 'raw-loader'
+        use: 'raw-loader',
       },
       {
         test: /\.m?js$/,
@@ -36,7 +35,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|ogg|wav|mp3)$/,
         loader: 'file-loader',
       },
-    ]
+    ],
   },
 
   plugins: [

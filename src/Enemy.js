@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import MatterEntity from './MatterEntity';
 import enemyImg from '../assets/character/enemies.png';
 import enemyJSON from '../assets/character/enemies_atlas.json';
@@ -17,9 +18,9 @@ export default class Enemy extends MatterEntity {
 
   constructor(data) {
     const { scene, enemy } = data;
-    const drops = JSON.parse(enemy.properties.find(p => p.name == 'drops').value);
-    const health = enemy.properties.find(p => p.name == 'health').value;
-    const score = enemy.properties.find(p => p.name == 'score').value;
+    const drops = JSON.parse(enemy.properties.find(p => p.name === 'drops').value);
+    const health = enemy.properties.find(p => p.name === 'health').value;
+    const score = enemy.properties.find(p => p.name === 'score').value;
     super({
       scene, x: enemy.x, y: enemy.y, texture: 'enemies', frame: `${enemy.name}_idle_1`, drops, health, score, name: enemy.name,
     });
@@ -60,7 +61,7 @@ export default class Enemy extends MatterEntity {
           clearInterval(this.attackTimer);
           this.attackTimer = null;
         }
-      } else if (this.attackTimer == null) {
+      } else if (this.attackTimer === null) {
         this.attackTimer = setInterval(this.attack, 500, this.attacking);
       }
     }
@@ -70,44 +71,5 @@ export default class Enemy extends MatterEntity {
     } else {
       this.anims.play(`${this.name}_idle`, true);
     }
-  }
-
-  generateEnemies(amount) {
-
-    this.enemies = this.game.add.group();
-
-    // Enable physics in them
-    this.enemies.enableBody = true;
-    this.enemies.physicsBodyType = Phaser.Physics.ARCADE;
-
-    for (var i = 0; i < amount; i++) {
-        this.generateEnemy();
-    }
-  }
-
-  generateEnemy() {
-
-      enemy = this.enemies.create(this.game.world.randomX, this.game.world.randomY, 'characters');
-
-      do {
-          enemy.reset(this.game.world.randomX, this.game.world.randomY);
-      } while (Phaser.Math.distance(this.player.x, this.player.y, enemy.x, enemy.y) <= 400)
-
-      var rnd = Math.random();
-      if (rnd >= 0 && rnd < .3) enemy = this.generateSkeleton(enemy);
-
-      // console.log('Generated ' + enemy.name + ' with ' + enemy.health + ' health, ' + enemy.strength + ' strength, and ' + enemy.speed + ' speed.');
-
-      return enemy;
-  }
-
-  generateSkeleton(enemy) {
-
-      enemy.animations.add('down', [9, 10, 11], 10, true);
-      enemy.animations.add('left', [21, 22, 23], 10, true);
-      enemy.animations.add('right', [33, 34, 35], 10, true);
-      enemy.animations.add('up', [45, 46, 47], 10, true);
-
-      // return this.setStats(enemy, 'Skeleton', 100, 70, 20, 5, 6);
   }
 }

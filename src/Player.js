@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import playerImg from '../assets/character/female.png';
 import playerJSON from '../assets/character/female_atlas.json';
 import jsonData from '../assets/character/female_anim.json';
