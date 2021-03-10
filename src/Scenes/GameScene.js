@@ -69,15 +69,9 @@ export default class GameScene extends Phaser.Scene {
     }
   }
 
-  generateEnemy() {
-    // this.map.getObjectLayer('Resources').objects.forEach(resource => new Resource({ scene: this, resource }));
-    this.map.getObjectLayer('Enemies').objects.forEach(enemy => this.enemies.push(new Enemy({ scene: this, enemy })));
-  }
-
   update() {
     this.enemies.forEach(enemy => enemy.update());
     this.player.update();
-    // this.generateEnemy();
     this.scoreText.setText(`Score: ${this.player.totalScore ? this.player.totalScore : 0}`);
     this.gameOver();
   }
