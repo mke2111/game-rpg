@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import config from '../Config/config';
+import { sendData } from '../ScoreApi';
 
 
 export default class PlayerNameScene extends Phaser.Scene {
@@ -27,7 +28,15 @@ export default class PlayerNameScene extends Phaser.Scene {
 
         if (inputName.value !== '') {
           element.style.display = 'none';
-          this.scene.start('Title', { player: inputName.value });
+          // sendData(inputName.value, null)
+          this.scene.start('Game', { player: inputName.value });
+        } else {
+          const warning = document.getElementById('warning');
+          warning.style.display = 'block';
+
+          setInterval(() => {
+            warning.style.display = 'none';
+          }, 6000);
         }
       } else if (event.target.name === 'back') {
         element.style.display = 'none';
