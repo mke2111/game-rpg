@@ -1,5 +1,6 @@
 import 'phaser';
 import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
+import InputTextPlugin from 'phaser3-rex-plugins/plugins/inputtext-plugin';
 
 
 export default {
@@ -13,6 +14,11 @@ export default {
   scale: {
     zoom: 1.6,
   },
+  dom: {
+    createContainer: true,
+  },
+  pixelArt: true,
+  roundPixels: true,
   physics: {
     default: 'matter',
     matter: {
@@ -28,5 +34,10 @@ export default {
         mapping: 'matterCollision',
       },
     ],
+    global: [{
+      plugin: InputTextPlugin,
+      key: 'InputTextPlugin',
+      start: true,
+    }],
   },
 };

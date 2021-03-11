@@ -2,6 +2,7 @@
 
 const webpack = require('webpack');
 const path = require('path');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
@@ -12,6 +13,10 @@ module.exports = {
     path: path.resolve(__dirname, 'build')
     // publicPath: '/build/',
   },
+
+  // plugins: [new HtmlWebpackPlugin({
+  //   template: 'index.html',
+  // }),
   
   module: {
 
@@ -36,13 +41,17 @@ module.exports = {
         test: /\.(png|jpe?g|gif|ogg|wav|mp3)$/,
         loader: 'file-loader',
       },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
     ]
   },
 
   plugins: [
     new webpack.DefinePlugin({
-      CANVAS_RENDERER: JSON.stringify(true),
-      WEBGL_RENDERER: JSON.stringify(true),
+      'typeof CANVAS_RENDERER': JSON.stringify(true),
+      'typeof WEBGL_RENDERER': JSON.stringify(true),
     }),
   ],
 

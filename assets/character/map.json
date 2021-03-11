@@ -859,7 +859,7 @@
         {
          "columns":20,
          "firstgid":1,
-         "image":"RPG Nature Tileset.png",
+         "image":"../images/tiles.png",
          "imageheight":288,
          "imagewidth":641,
          "margin":0,

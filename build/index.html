@@ -19,7 +19,20 @@
         <p>Use the left cursor to smash element and gain points.</p>
         <p>Use the arrow keys to navigate</p>
       </div>
-      <div id="content" style="display: block; width: 100%; text-align: center"></div>
+      <div id="content" style="display: block; width: 100%; text-align: center">
+        <form id="name-form" autocomplete="off" style="display:none">
+          <span id="warning">Please Enter your Name</span>
+          <input type="text" placeholder="Your Name" id="name" name="name">
+          <input type="button"  name="saveNameBtn" value="Save" placeholder="Save Name">
+          <input type="button"  name="back">
+        </form>
+        <div id="score" style="display:none">
+          <span><strong>Rank</strong></span>
+          <span><strong>Name</strong></span>
+          <span><strong>Score</strong></span>
+        </div>
+        <input type="button"  id="menu" style="display:none">
+      </div>
     </div>
     <script src="build/project.bundle.js" charset="utf-8"></script>
   </body>
