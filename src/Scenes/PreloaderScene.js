@@ -11,8 +11,7 @@ export default class PreloaderScene extends Phaser.Scene {
  
   preload () {
     // add logo image
-    this.add.image(250, 50, 'logo');
-    // this.add.image(280, 250, 'preloaderBar');
+    this.add.image(290, 50, 'logo');
   
     // display progress bar
     var progressBar = this.add.graphics();
@@ -25,7 +24,7 @@ export default class PreloaderScene extends Phaser.Scene {
     var loadingText = this.make.text({
       x: (width / 2),
       y: height / 2 - 50,
-      text: 'RPG Game Loading...',
+      text: 'Hunter Game Loading...',
       style: {
         font: '20px monospace',
         fill: '#ffffff'
