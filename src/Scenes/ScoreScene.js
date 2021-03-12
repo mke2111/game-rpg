@@ -21,7 +21,7 @@ export default class ScoreScene extends Phaser.Scene {
 
       data.sort((x, y) => y.score - x.score);
       const space = 20;
-      for (let i = 0; i < 10; i += 1) {
+      for (let i = 0; i < 6; i += 1) {
         if (data[i] !== undefined) {
           this.add.text(120, 130 + (space * i),
             `${data[i].user} --  ${data[i].score}`,
