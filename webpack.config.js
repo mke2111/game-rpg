@@ -1,8 +1,5 @@
-'use strict';
-
 const webpack = require('webpack');
 const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
@@ -11,12 +8,7 @@ module.exports = {
   output: {
     filename: 'project.bundle.js',
     path: path.resolve(__dirname, 'build')
-    // publicPath: '/build/',
   },
-
-  // plugins: [new HtmlWebpackPlugin({
-  //   template: 'index.html',
-  // }),
   
   module: {
 
@@ -59,16 +51,3 @@ module.exports = {
     port: 8080,
   },
 };
-
-// {
-//   test: /\.(png|jpe?g|gif|wav|mp3)$/i,
-//   use: [
-//     {
-//       loader: 'file-loader',
-//       options: {
-//         name: '[name].[contenthash].[ext]',
-//         outputPath: 'images',
-//       },
-//     },
-//   ],
-// },
