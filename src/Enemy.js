@@ -73,41 +73,17 @@ export default class Enemy extends MatterEntity {
   }
 
   generateEnemies(amount) {
-
     this.enemies = this.game.add.group();
-
     // Enable physics in them
     this.enemies.enableBody = true;
     this.enemies.physicsBodyType = Phaser.Physics.ARCADE;
 
-    for (var i = 0; i < amount; i++) {
+    for (let i = 0; i < amount; i++) {
         this.generateEnemy();
     }
   }
 
   generateEnemy() {
-
       enemy = this.enemies.create(this.game.world.randomX, this.game.world.randomY, 'characters');
-
-      do {
-          enemy.reset(this.game.world.randomX, this.game.world.randomY);
-      } while (Phaser.Math.distance(this.player.x, this.player.y, enemy.x, enemy.y) <= 400)
-
-      var rnd = Math.random();
-      if (rnd >= 0 && rnd < .3) enemy = this.generateSkeleton(enemy);
-
-      // console.log('Generated ' + enemy.name + ' with ' + enemy.health + ' health, ' + enemy.strength + ' strength, and ' + enemy.speed + ' speed.');
-
-      return enemy;
-  }
-
-  generateSkeleton(enemy) {
-
-      enemy.animations.add('down', [9, 10, 11], 10, true);
-      enemy.animations.add('left', [21, 22, 23], 10, true);
-      enemy.animations.add('right', [33, 34, 35], 10, true);
-      enemy.animations.add('up', [45, 46, 47], 10, true);
-
-      // return this.setStats(enemy, 'Skeleton', 100, 70, 20, 5, 6);
   }
 }
