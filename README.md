@@ -1,49 +1,106 @@
-# Phaser 3 Webpack Project Template
+# Project: Spider Attack
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/) that includes hot-reloading for development and production-ready builds.
+This is a Hunting video game built with Javascript and the game engine [Phaser](https://phaser.io/).
 
-This has been updated for Phaser 3.50.0 version and above.
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
-Loading images via JavaScript module `import` is also supported, although not recommended.
 
-## Requirements
+## About The Project
 
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
+This is a 2D Hunting game. It is only browser-based and built with Phaser 3 game engine. The player's job is to try to avoid a enemy attacks. So the player should keep smashing them as they get in close ranges. The main objective of the game is to keep the enemies at a distance and smash any that gets closer to the player. If more enemies appear in close range to the player, they overwhelm and defeat you.
 
-## Available Commands
+For each spider you shoot, 50 points will be added to your score. In the end, you will be added to the leaderboard if you come out among the best.
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm start` | Build project and open web server running project |
-| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
 
-## Writing Code
+## How to play
+When the game first starts;
+* You are presented with the Title scene that has three buttons.
+> Play button is to play the game.
+> Options button directs you to the game settings
+> Credits button directs to the game Inpirations and author
 
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development server by running `npm start`.
+* With the play button, the next scene allows you to play the game as a guest, meaning that you don't have to input your name. Or Enter a a name and still play the game.
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder and webpack will automatically recompile and reload your server (available at `http://localhost:8080` by default).
+* Once the game starts on the next scene, 
+> Use the right cursor key to smash through sprites and earn points/stars
+> Use the arrow keys to navigate left, right, up and down.
 
-## Customizing the Template
+* The  game over scene will list down all the scores of top users and your own score is displayed at the top.
 
-### Babel
+* Reload the page to play again.
 
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
 
- ```
-"browsers": [
-  ">0.25%",
-  "not ie 11",
-  "not op_mini all"
-]
- ```
+## Installation
 
-### Webpack
+To use this app locally, this is what you need to:
 
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create new configuration files and target them in specific npm tasks inside of `package.json'.
+* [Download](hhttps://github.com/mke2111/game-rpg.git) or clone this repo:
 
-## Deploying Code
+  - Clone with HTTPS in the terminal.
+  ```
+    git clone https://github.com/mke2111/game-rpg.git
+    
+  ```
+* Then `cd game-rpg` into the downloaded folder and run `npm install`
+* then, run `npm run start`.
 
-After you run the `npm run build` command, your code will be built into a single bundle located at `dist/bundle.min.js` along with any other assets you project depended. 
+## Tests
+* Run `npm run test` for the tests of the game project.
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), you should be able to open `http://mycoolserver.com/index.html` and play your game.
+### Built With
+This project was built using these technologies.
+* Phaser 3 and a few of it's plugins
+* JavaScript
+* HTML & CSS
+* Netlify (for deployment)
+* Webpack
+* Jest
+* Leaderboard API service
+
+## Live Version
+To try the live demo [click here](https://mke2111.github.io/game-rp)
+
+
+## Game Design
+The game uses a number of sprites to bring all the scenes to life. User can expect well-designed animations and map textures.
+
+### The Hunter
+The hunter is usually holding a hammer that smashes through other sprites.
+
+### The Fig
+Consider this as one of the enemies
+
+### The Bear
+Consider this as one of the enemies
+
+### The Wolf
+Consider this as one of the enemies
+
+## Future Updates
+* Add a health bar
+* Make mobile version
+* Add Bosses
+
+## Author
+
+👤 **Roy Mukuye**
+
+- GitHub: [@mke2111](https://github.com/mke2111)
+- Twitter: [@Roymkenya](https://twitter.com/Roymkenya)
+- LinkedIn: [Roy Mukuye](https://www.linkedin.com/in/roy-mukuye-42b07b1b4)
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Microverse](https://www.microverse.org/)
+* GameDev Academy
+* OpenCode -- Youtube
+
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
