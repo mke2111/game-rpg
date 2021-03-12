@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
 import InputTextPlugin from 'phaser3-rex-plugins/plugins/inputtext-plugin';
 

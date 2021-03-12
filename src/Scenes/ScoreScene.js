@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import { retrieveData } from '../ScoreApi';
 
 export default class ScoreScene extends Phaser.Scene {

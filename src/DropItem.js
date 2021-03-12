@@ -1,3 +1,5 @@
+import Phaser from 'phaser';
+
 export default class DropItem extends Phaser.Physics.Matter.Sprite {
   constructor(data) {
     const {

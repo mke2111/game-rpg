@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import DropItem from './DropItem';
 
 export default class MatterEntity extends Phaser.Physics.Matter.Sprite {
@@ -35,7 +36,7 @@ export default class MatterEntity extends Phaser.Physics.Matter.Sprite {
 
   hit = () => {
     if (this.sound) this.sound.play();
-    this.health--;
+    this.health -= 1;
     if (this.dead) {
       this.onDeath();
       this.drops.forEach(drop => new DropItem({

@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+import Phaser from 'phaser';
 import MatterEntity from './MatterEntity';
 import enemyImg from '../assets/character/enemies.png';
 import enemyJSON from '../assets/character/enemies_atlas.json';
