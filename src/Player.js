@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-unused-vars */
 import Phaser from 'phaser';
 import playerImg from '../assets/character/female.png';
 import playerJSON from '../assets/character/female_atlas.json';
