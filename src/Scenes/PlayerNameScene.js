@@ -9,7 +9,7 @@ export default class PlayerNameScene extends Phaser.Scene {
     const { width, height } = this.scale;
     this.add.text(width *0.5, height * 0.1, 'Enter your name -- press Save Name \n Play as Guest -- press Guest', {
       fontSize: '18px',
-      color: '#000',
+      color: '#fff',
       fontFamily: 'Franklin Gothic Medium',
       fontStyle: 'bolder'
     })
