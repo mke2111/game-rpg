@@ -1,16 +1,16 @@
 import 'phaser';
 
 export default class BootScene extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super('Boot');
   }
 
-  preload () {
+  preload() {
     this.load.image('logo', 'assets/nowornever.png');
     this.load.image('preloaderBar', 'assets/images/preload-bar.png');
   }
 
-  create () {
+  create() {
     this.scene.start('Preloader');
   }
-};
+}

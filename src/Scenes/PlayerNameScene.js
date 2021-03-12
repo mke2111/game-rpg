@@ -7,13 +7,13 @@ export default class PlayerNameScene extends Phaser.Scene {
 
   create() {
     const { width, height } = this.scale;
-    this.add.text(width *0.5, height * 0.1, 'Enter your name -- press Save Name \n Play as Guest -- press Guest', {
+    this.add.text(width * 0.5, height * 0.1, 'Enter your name -- press Save Name \n Play as Guest -- press Guest', {
       fontSize: '18px',
       color: '#fff',
       fontFamily: 'Franklin Gothic Medium',
-      fontStyle: 'bolder'
+      fontStyle: 'bolder',
     })
-    .setOrigin(0.5);
+      .setOrigin(0.5);
 
     const element = document.getElementById('name-form');
     element.style.display = 'block';

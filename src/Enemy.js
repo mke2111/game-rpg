@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import MatterEntity from './MatterEntity';
 import enemyImg from '../assets/character/enemies.png';
 import enemyJSON from '../assets/character/enemies_atlas.json';
@@ -17,9 +18,9 @@ export default class Enemy extends MatterEntity {
 
   constructor(data) {
     const { scene, enemy } = data;
-    const drops = JSON.parse(enemy.properties.find(p => p.name == 'drops').value);
-    const health = enemy.properties.find(p => p.name == 'health').value;
-    const score = enemy.properties.find(p => p.name == 'score').value;
+    const drops = JSON.parse(enemy.properties.find(p => p.name === 'drops').value);
+    const health = enemy.properties.find(p => p.name === 'health').value;
+    const score = enemy.properties.find(p => p.name === 'score').value;
     super({
       scene, x: enemy.x, y: enemy.y, texture: 'enemies', frame: `${enemy.name}_idle_1`, drops, health, score, name: enemy.name,
     });
@@ -60,7 +61,7 @@ export default class Enemy extends MatterEntity {
           clearInterval(this.attackTimer);
           this.attackTimer = null;
         }
-      } else if (this.attackTimer == null) {
+      } else if (this.attackTimer === null) {
         this.attackTimer = setInterval(this.attack, 500, this.attacking);
       }
     }
@@ -70,20 +71,5 @@ export default class Enemy extends MatterEntity {
     } else {
       this.anims.play(`${this.name}_idle`, true);
     }
-  }
-
-  generateEnemies(amount) {
-    this.enemies = this.game.add.group();
-    // Enable physics in them
-    this.enemies.enableBody = true;
-    this.enemies.physicsBodyType = Phaser.Physics.ARCADE;
-
-    for (let i = 0; i < amount; i++) {
-        this.generateEnemy();
-    }
-  }
-
-  generateEnemy() {
-      enemy = this.enemies.create(this.game.world.randomX, this.game.world.randomY, 'characters');
   }
 }

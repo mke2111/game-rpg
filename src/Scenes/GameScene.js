@@ -7,7 +7,7 @@ import Resource from '../Resource';
 import { sendData } from '../ScoreApi';
 
 export default class GameScene extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super('Game');
     this.enemies = [];
   }
@@ -16,7 +16,7 @@ export default class GameScene extends Phaser.Scene {
     this.playerName = data.player;
   }
 
-  preload () {
+  preload() {
     // load images
     Player.preload(this);
     Enemy.preload(this);
@@ -25,7 +25,7 @@ export default class GameScene extends Phaser.Scene {
     this.load.tilemapTiledJSON('map', gameMap);
   }
 
-  create () {
+  create() {
     this.add.image(380, 300, 'background');
 
 
@@ -75,4 +75,4 @@ export default class GameScene extends Phaser.Scene {
     this.scoreText.setText(`Score: ${this.player.totalScore ? this.player.totalScore : 0}`);
     this.gameOver();
   }
-};
+}

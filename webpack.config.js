@@ -7,16 +7,16 @@ module.exports = {
 
   output: {
     filename: 'project.bundle.js',
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'build'),
   },
-  
+
   module: {
 
     rules: [
 
       {
         test: [/\.vert$/, /\.frag$/],
-        use: 'raw-loader'
+        use: 'raw-loader',
       },
       {
         test: /\.m?js$/,
@@ -37,7 +37,7 @@ module.exports = {
         test: /\.html$/i,
         loader: 'html-loader',
       },
-    ]
+    ],
   },
 
   plugins: [

@@ -1,4 +1,4 @@
-# Project: Spider Attack
+# Project: Hunting Game
 
 This is a Hunting video game built with Javascript and the game engine [Phaser](https://phaser.io/).
 
