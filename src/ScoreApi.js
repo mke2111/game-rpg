@@ -20,9 +20,13 @@ export const sendData = async (name, score) => {
     body: JSON.stringify(playerScore),
   };
 
-  const postRequest = await fetch(url, postData);
-  const data = await postRequest.json();
-  return data;
+  try {
+    const postRequest = await fetch(url, postData);
+    const data = await postRequest.json();
+    return data;
+  } catch (error) {
+    throw new Error(`Could not reach the API: ${error}`);
+  }
 };
 
 export const retrieveData = async () => {
@@ -35,8 +39,12 @@ export const retrieveData = async () => {
     },
   };
 
-  const getRequest = await fetch(url, getData);
-  const data = await getRequest.json();
+  try {
+    const getRequest = await fetch(url, getData);
+    const data = await getRequest.json();
 
-  return data.result;
+    return data.result;
+  } catch (error) {
+    throw new Error(error);
+  }
 };
