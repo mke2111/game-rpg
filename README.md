@@ -2,18 +2,16 @@
 
 This is a Hunting video game built with Javascript and the game engine [Phaser](https://phaser.io/).
 
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+![screenshot](./titlescene.png)
+![screenshot](./gamescene.png)
+![screenshot](./scorescene.png)
 
 
 ## About The Project
 
 This is a 2D Hunting game. It is only browser-based and built with Phaser 3 game engine. The player's job is to try to avoid a enemy attacks. So the player should keep smashing them as they get in close ranges. The main objective of the game is to keep the enemies at a distance and smash any that gets closer to the player. If more enemies appear in close range to the player, they overwhelm and defeat you.
 
-For each spider you shoot, 50 points will be added to your score. In the end, you will be added to the leaderboard if you come out among the best.
+For each enemy you smash, points will be added to your score. In the end, you will be added to the leaderboard if you come out among the best.
 
 
 ## How to play
@@ -56,7 +54,6 @@ This project was built using these technologies.
 * Phaser 3 and a few of it's plugins
 * JavaScript
 * HTML & CSS
-* Netlify (for deployment)
 * Webpack
 * Jest
 * Leaderboard API service
@@ -98,7 +95,7 @@ Consider this as one of the enemies
 ## Acknowledgements
 * [Microverse](https://www.microverse.org/)
 * GameDev Academy
-* OpenCode -- Youtube
+* OpenArcade -- Youtube
 
 
 ## 📝 License
