@@ -5,8 +5,8 @@ module.exports = {
   // devtool: 'inline-source-map',
 
   devServer: {
-    // contentBase: './build',
-    port: 8080,
+    contentBase: './build',
+    // port: 8080,
   },
 
   // entry: './src/index.js',
