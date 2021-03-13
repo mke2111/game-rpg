@@ -2,17 +2,20 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+  // devtool: 'inline-source-map',
 
-  entry: {
-    app: './src/index.js',
-    'production-dependencies': ['phaser'],  
-  }
-
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: '[name].js'
-    
+  devServer: {
+    // contentBase: './build',
+    port: 8080,
   },
+
+  // entry: './src/index.js',
+
+  // output: {
+  //   path: path.resolve(__dirname, 'build'),
+  //   filename: 'project.bundle.js'
+    
+  // },
   
   module: {
 
@@ -50,8 +53,4 @@ module.exports = {
       'typeof WEBGL_RENDERER': JSON.stringify(true),
     }),
   ],
-
-  devServer: {
-    port: 8080,
-  },
 };

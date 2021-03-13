@@ -4,8 +4,11 @@
   "description": "A hunter game from the Phaser 3 Project Template",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "npm run build && webpack-dev-server --port=8000"
+    "test": "jest",
+    "watch": "--watch",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack serve  --mode development --open"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,7 @@
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
+    "@webpack-cli/serve": "^1.3.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "file-loader": "^4.3.0",
@@ -29,7 +33,7 @@
     "raw-loader": "^3.1.0",
     "terser-webpack-plugin": "^2.2.1",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.9.0",
     "webpack-merge": "^4.2.2"
   },
