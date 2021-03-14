@@ -3,7 +3,7 @@ import config from '../Config/config';
  
 export default class CreditsScene extends Phaser.Scene {
   constructor () {
-    super('Credits');
+    super('CreditsScene');
   }
 
   create () {
@@ -59,7 +59,7 @@ export default class CreditsScene extends Phaser.Scene {
       delay: 1000,
       onComplete: function () {
         this.madeByTween.destroy;
-        this.scene.start('Title');
+        this.scene.start('TitleScene');
       }.bind(this)
     });
   }

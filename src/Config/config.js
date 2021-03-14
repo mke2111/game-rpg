@@ -5,15 +5,15 @@ import InputTextPlugin from 'phaser3-rex-plugins/plugins/inputtext-plugin';
 
 export default {
   type: Phaser.AUTO,
-  parent: 'content',
-  width: 604,
-  height: 400,
-  // width: 380,
-  // height: 300,
+  parent: 'phasegame',
+  // width: 604,
+  // height: 400,
+  width: 900,
+  height: 600,
   backgroundColor: '#000035',
-  scale: {
-    zoom: 1.6,
-  },
+  // scale: {
+  //   // zoom: 1.6,
+  // },
   dom: {
     createContainer: true,
   },

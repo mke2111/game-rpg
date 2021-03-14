@@ -43,10 +43,10 @@ module.exports = {
         test: /\.(png|jpe?g|gif|ogg|wav|mp3)$/,
         loader: 'file-loader',
       },
-      // {
-      //   test: /\.html$/i,
-      //   loader: 'html-loader',
-      // },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
     ]
   },
 

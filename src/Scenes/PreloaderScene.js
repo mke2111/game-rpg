@@ -1,8 +1,18 @@
 import 'phaser';
+
+import blueButton1 from '../assets/ui/blue_button02.png';
+import blueButton2 from '../assets/ui/blue_button03.png';
+import phaserLogo from '../assets/nowornever.png';
+import box from '../assets/ui/grey_box.png';
+import checkedBox from '../assets/ui/blue_boxCheckmark.png';
+// import bgMusic from '../assets/TownTheme.ogg';
+import tiles from '../assets/images/tiles.png';
+import characters from '../assets/images/preload-bar.png';
+import background from '../assets/bg.jpg';
  
 export default class PreloaderScene extends Phaser.Scene {
   constructor () {
-    super('Preloader');
+    super('PreloaderScene');
   }
 
   init () {
@@ -11,7 +21,7 @@ export default class PreloaderScene extends Phaser.Scene {
  
   preload () {
     // add logo image
-    this.add.image(290, 50, 'logo');
+    // this.add.image(290, 50, 'logo');
   
     // display progress bar
     var progressBar = this.add.graphics();
@@ -80,23 +90,23 @@ export default class PreloaderScene extends Phaser.Scene {
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
   
     // load assets needed in our game
-    this.load.image('blueButton1', 'assets/ui/blue_button02.png');
-    this.load.image('blueButton2', 'assets/ui/blue_button03.png');
-    this.load.image('phaserLogo', 'assets/logo.png');
-    this.load.image('box', 'assets/ui/grey_box.png');
-    this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
-    this.load.audio('bgMusic', ['assets/TownTheme.mp3']);
-    this.load.spritesheet('tiles', 'assets/images/tiles.png', 16, 16);
-    this.load.spritesheet('characters', 'assets/images/characters.png', 16, 16);
-    this.load.image('background', '../assets/bg.jpg');
+    this.load.image('blueButton1', blueButton1);
+    this.load.image('blueButton2', blueButton2);
+    this.load.image('phaserLogo', phaserLogo);
+    this.load.image('box', box);
+    this.load.image('checkedBox', checkedBox);
+    // this.load.image('bgMusic', bgMusic);
+    this.load.image('tiles', tiles, 16, 16);
+    this.load.image('characters', characters, 16, 16);
+    this.load.image('background', background);
 
   }
    
   ready () {
-    this.scene.start('Title');
+    this.scene.start('TitleScene');
     this.readyCount++;
     if (this.readyCount === 2) {
-      this.scene.start('Title');
+      this.scene.start('TitleScene');
     }
   }
 };
