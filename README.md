@@ -57,6 +57,7 @@ This project was built using these technologies.
 * Webpack
 * Jest
 * Leaderboard API service
+* Netlify ( For deployment)
 
 ## Live Version
 To try the live demo [click here](https://amazing-varahamihira-0540fe.netlify.app/)
